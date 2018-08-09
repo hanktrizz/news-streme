@@ -1,2 +1,2 @@
 # news-streme
-PS Internal AngularJS showcase project
+PS Deployment Team Internal AngularJS showcase project

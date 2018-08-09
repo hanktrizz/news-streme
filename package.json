@@ -1,0 +1,28 @@
+{
+  "name": "news-streme",
+  "version": "1.0.0",
+  "description": "PeopleStreme Deployment Team internal AngularJS project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanktrizz/news-streme.git"
+  },
+  "author": "Han Kyaw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hanktrizz/news-streme/issues"
+  },
+  "homepage": "https://github.com/hanktrizz/news-streme#readme",
+  "devDependencies": {
+    "jasmine": "^3.2.0"
+  },
+  "dependencies": {
+    "angular": "^1.7.3",
+    "angular-route": "^1.7.3",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0"
+  }
+}
