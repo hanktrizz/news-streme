@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <!--[if lt IE 7]>
-<html lang="en" ng-app="envisageUI" class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<html lang="en" ng-app="newsStreme" class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
 <!--[if IE 7]>
-<html lang="en" ng-app="envisageUI" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<html lang="en" ng-app="newsStreme" class="no-js lt-ie9 lt-ie8"><![endif]-->
 <!--[if IE 8]>
-<html lang="en" ng-app="envisageUI" class="no-js lt-ie9"><![endif]-->
+<html lang="en" ng-app="newsStreme" class="no-js lt-ie9"><![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en" ng-app="newsStreme" class="no-js"><!--<![endif]-->
+<html lang="en" ng-app="newsStreme" class="no-js">
+<!--<![endif]-->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NewsStreme - PS Internal</title>
 </head>
+
 <body>
 
-<!--[if lt IE 7]>
+    <!--[if lt IE 7]>
 <p>You are using an <strong>outdated</strong> browser. Please upgrade your browser for a better, smoother user
     experience.</p>
 <![endif]-->
 
 
+    <div ng-view></div>
 
-<div ng-view></div>
 
-<p>Hello, News!</p>
 
-<script type='text/javascript' src='config.js'></script>
-<script src="/node_modules/angular/angular.js"></script>
-<script src="/node_modules/angular-route/angular-route.js"></script>
-<script src="app/app.js"></script>
+    <script type='text/javascript' src='config.js'></script>
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-route/angular-route.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/shared/constants.js"></script>
+    <script src="app/shared/services/api.service.js"></script>
+    <script src="app/landing/landing.component.js"></script>
+    <script src="app/landing/landing.controller.js"></script>
 </body>
+
 </html>

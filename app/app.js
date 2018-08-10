@@ -1,14 +1,14 @@
 'use strict';
 
 angular
-    .module('newsStreme', ['ngRoute'])
+    .module('newsStreme', ['ngRoute', 'newsStreme.landing'])
     .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
         $routeProvider
-        .when("/", {
-            templateURL: "../index.html"
-        })
-        .otherwise({
+            .when("/", {
+                template: "<landing></landing>"
+            })
+            .otherwise({
 
-        });
+            });
     }]);
