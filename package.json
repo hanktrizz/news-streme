@@ -17,12 +17,14 @@
   },
   "homepage": "https://github.com/hanktrizz/news-streme#readme",
   "devDependencies": {
-    "jasmine": "^3.2.0"
+    "jasmine": "^3.2.0",
+    "less": "^3.8.1"
   },
   "dependencies": {
     "angular": "^1.7.3",
     "angular-route": "^1.7.3",
     "express": "^4.16.3",
+    "less-watch-compile": "^2.1.0",
     "morgan": "^1.9.0"
   }
 }

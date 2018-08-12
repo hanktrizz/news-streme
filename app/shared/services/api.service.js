@@ -8,7 +8,8 @@ angular
         function getQueryStringFromParams(parameters) {
             var query = "?";
             for (var key in parameters) {
-                query += key.toString().trim() + "=" + parameters[key].toString().trim() + "&";
+                if (parameters.hasOwnProperty(key))
+                    query += key.toString().trim() + "=" + parameters[key].toString().trim() + "&";
             }
             query = query.substr(0, query.length - 1);
             return query;
@@ -20,7 +21,7 @@ angular
                     if (params && !angular.equals(params, {})) {
                         // Make a GET request to the api based on supplied parameters
                         return $http.get(NEWS_API_URL + ENDPOINTS.HEADLINES + getQueryStringFromParams(params), {
-                            headers: { 'X-Api-Key': API_KEY }
+                            headers: {'X-Api-Key': API_KEY}
                         }).then(function (response) {
                             console.log('Fetching news data from API...');
                             resolve(response.data);
