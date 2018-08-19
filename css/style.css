@@ -1,3 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+}
 body {
   background: beige;
+}
+header {
+  height: 48px;
+  width: 100%;
+  background: lightgreen;
+}
+.header__logo,
+.menu {
+  display: block;
+  height: 48px;
+  float: left;
+}
+.header__logo {
+  background: teal;
+  width: 30%;
+}
+.menu {
+  background: cadetblue;
+  width: 70%;
+}
+.menu a,
+.menu input {
+  display: inline-block;
+  height: 48px;
+  line-height: 48px;
+}
+.menu a {
+  background: mediumvioletred;
+  width: 15%;
+  float: left;
+  text-align: center;
+  text-decoration: none;
+}
+.menu a:hover {
+  background: palevioletred;
+}
+.menu input {
+  width: 30%;
+  font-size: 14pt;
+  border: none;
+  box-shadow: inset 0px 0px 0px 1px #000;
 }

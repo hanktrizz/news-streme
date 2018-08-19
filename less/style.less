@@ -1,5 +1,61 @@
-@background-color:beige;
+@background-color: beige;
 
-body{
+@navbar-height: 48px;
+@navbar-item-width: 100px;
+@navbar-padding: 4px 0;
+@navbar-line-height: 48px;
+@navbar-background-color: lightgreen;
+@navbar-link-color: mediumvioletred;
+@navbar-link-hover-color: palevioletred;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
   background: @background-color;
+}
+
+header {
+  height: @navbar-height;
+  width: 100%;
+  background: @navbar-background-color;
+}
+
+.header__logo, .menu {
+  display: block;
+  height: @navbar-height;
+  float: left;
+}
+
+.header__logo {
+  background: teal;
+  width: 30%;
+}
+
+.menu {
+  background: cadetblue;
+  width: 70%;
+  a, input {
+    display: inline-block;
+    height: @navbar-height;
+    line-height: @navbar-height;
+  }
+  a {
+    background: @navbar-link-color;
+    width: 15%;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    &:hover {
+      background: @navbar-link-hover-color;
+    }
+  }
+  input {
+    width: 30%;
+    font-size: 14pt;
+    border: none;
+    box-shadow: inset 0 0 0 1px #000;
+  }
 }

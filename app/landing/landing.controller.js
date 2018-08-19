@@ -7,10 +7,10 @@ angular
 
         self.headlines = null;
 
-        var promise = NewsApiService.getNews({ country: "au", category: "business" });
-        promise.then(function (data) {
-            self.headlines = data;
-        }, function (reason) {
-            alert('Failed: ' + reason);
-        });
+        // var promise = NewsApiService.getNews({ country: "au", category: "business" });
+        // promise.then(function (data) {
+        //     self.headlines = data;
+        // }, function (reason) {
+        //     alert('Failed: ' + reason);
+        // });
     }]);
