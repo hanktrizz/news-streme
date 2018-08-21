@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "PeopleStreme Deployment Team internal AngularJS project",
   "main": "index.js",
-  "scripts": {
-    "test": "jasmine"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hanktrizz/news-streme.git"
@@ -17,6 +14,7 @@
   },
   "homepage": "https://github.com/hanktrizz/news-streme#readme",
   "devDependencies": {
+    "catw": "^1.0.1",
     "jasmine": "^3.2.0",
     "less": "^3.8.1"
   },
@@ -26,5 +24,10 @@
     "express": "^4.16.3",
     "less-watch-compiler": "^1.11.3",
     "morgan": "^1.9.0"
+  },
+  "scripts": {
+    "build-css": "lessc less/style.less > css/style.css",
+    "test": "jasmine",
+    "build": "npm run build-css && node server.js"
   }
 }
