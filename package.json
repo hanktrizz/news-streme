@@ -16,7 +16,8 @@
   "devDependencies": {
     "catw": "^1.0.1",
     "jasmine": "^3.2.0",
-    "less": "^3.8.1"
+    "less": "^3.8.1",
+    "nodemon": "^1.18.3"
   },
   "dependencies": {
     "angular": "^1.7.3",
@@ -28,6 +29,7 @@
   "scripts": {
     "build-css": "lessc less/style.less > css/style.css",
     "test": "jasmine",
-    "build": "npm run build-css && node server.js"
+    "build": "npm run build-css && node server.js",
+    "start": "nodemon -e js,less -x \"start http://localhost:3000 && npm run build\" --ignore build/"
   }
 }

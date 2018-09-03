@@ -1,3 +1,16 @@
+/***************************
+  Third Party/Vendor Imports
+***************************/
+@import "vendor/reset.less";
+/***************************
+  Less Partials Imports
+***************************/
+@import "responsive.less";
+/***************************
+  Preamble: Global Vars
+***************************/
+@img-path: "../assets/";
+
 @background-color: beige;
 
 @navbar-height: 48px;
@@ -9,8 +22,7 @@
 @navbar-link-hover-color: palevioletred;
 
 * {
-  padding: 0;
-  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -19,7 +31,6 @@ body {
 
 header {
   height: @navbar-height;
-  width: 100%;
   background: @navbar-background-color;
 }
 
@@ -30,13 +41,11 @@ header {
 }
 
 .header__logo {
-  background: teal;
-  width: 30%;
+  background: skyblue;
 }
 
 .menu {
   background: cadetblue;
-  width: 70%;
   a, input {
     display: inline-block;
     height: @navbar-height;
@@ -44,7 +53,7 @@ header {
   }
   a {
     background: @navbar-link-color;
-    width: 15%;
+    width: 25%;
     float: left;
     text-align: center;
     text-decoration: none;
@@ -52,10 +61,37 @@ header {
       background: @navbar-link-hover-color;
     }
   }
-  input {
-    width: 30%;
-    font-size: 14pt;
-    border: none;
-    box-shadow: inset 0 0 0 1px #000;
+}
+
+.auxControlWrapper {
+  #txtSearchBar {
+    .displayHidden();
+  }
+  #auxLinkIcons {
+    float: right;
+
+    a {
+      float: left;
+    }
+
+    a:first-of-type {
+      .icon();
+      border-right-style: none;
+      background: url("@{img-path}/zoom_icon&32.png") no-repeat center center;
+    }
+
+    #icoSettings {
+      background: url("@{img-path}/cog_icon&32.png") no-repeat center center;
+    }
   }
 }
+
+.icon {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border: 1px silver solid;
+}
+
+
+
