@@ -30,6 +30,7 @@
     "build-css": "lessc less/style.less > css/style.css",
     "test": "jasmine",
     "build": "npm run build-css && node server.js",
+    "build-dev": "npm install && npm run build",
     "start": "nodemon -e js,less -x \"start http://localhost:3000 && npm run build\" --ignore build/"
   }
 }

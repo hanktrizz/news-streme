@@ -4,6 +4,7 @@ var morgan     = require("morgan");
 var app        = express();
 
 var port = process.env.PORT || 3000;
+const URL = "http://localhost:" + port + "/";
 
 app.use(morgan("dev"));
 app.use(express.static("./"));
@@ -15,4 +16,5 @@ app.get("/", function(req, res) {
 // Start Server
 app.listen(port, function () {
     console.log( "Express server listening on port " + port);
+    console.log("App running at : " + URL);
 });
