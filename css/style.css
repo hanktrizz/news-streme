@@ -171,15 +171,6 @@ table {
 .displayHidden {
   display: none;
 }
-/***************************
-  Preamble: Global Vars
-***************************/
-* {
-  box-sizing: border-box;
-}
-body {
-  background: beige;
-}
 header {
   height: 48px;
   background: lightgreen;
@@ -189,6 +180,15 @@ header {
   display: block;
   height: 48px;
   float: left;
+}
+/***************************
+  Preamble: Global Vars
+***************************/
+* {
+  box-sizing: border-box;
+}
+body {
+  background: beige;
 }
 .header__logo {
   background: skyblue;
@@ -227,10 +227,10 @@ header {
   height: 48px;
   border: 1px silver solid;
   border-right-style: none;
-  background: url("../assets//zoom_icon&32.png") no-repeat center center;
+  background: url("../assets/icons/zoom_icon&32.png") no-repeat center center;
 }
 .auxControlWrapper #auxLinkIcons #icoSettings {
-  background: url("../assets//cog_icon&32.png") no-repeat center center;
+  background: url("../assets/icons/cog_icon&32.png") no-repeat center center;
 }
 .icon {
   display: inline-block;

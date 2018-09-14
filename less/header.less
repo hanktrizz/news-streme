@@ -1,0 +1,69 @@
+/***************************
+  Header Style Rules
+***************************/
+.header__logo {
+    background: skyblue;
+  }
+
+header {
+    height: @navbar-height;
+    background: @navbar-background-color;
+  }
+  
+  .header__logo, .menu {
+    display: block;
+    height: @navbar-height;
+    float: left;
+  }
+
+/***************************
+  Navigation Style Rules
+***************************/
+.menu {
+    background: cadetblue;
+    a, input {
+      display: inline-block;
+      height: @navbar-height;
+      line-height: @navbar-height;
+    }
+    a {
+      background: @navbar-link-color;
+      width: 25%;
+      float: left;
+      text-align: center;
+      text-decoration: none;
+      &:hover {
+        background: @navbar-link-hover-color;
+      }
+    }
+  }
+  
+  .auxControlWrapper {
+    #txtSearchBar {
+      .displayHidden();
+    }
+    #auxLinkIcons {
+      float: right;
+  
+      a {
+        float: left;
+      }
+  
+      a:first-of-type {
+        .icon();
+        border-right-style: none;
+        background: url("@{ico-path}/zoom_icon&32.png") no-repeat center center;
+      }
+  
+      #icoSettings {
+        background: url("@{ico-path}/cog_icon&32.png") no-repeat center center;
+      }
+    }
+  }
+  
+  .icon {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border: 1px silver solid;
+  }
