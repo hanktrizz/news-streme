@@ -129,6 +129,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g.ttf) format('truetype');
+}
 /***************************
   Less Partials Imports
 ***************************/
@@ -171,51 +177,77 @@ table {
 .displayHidden {
   display: none;
 }
+/***************************
+  Variables
+***************************/
+/***************************
+  Header Logo Style Rules
+***************************/
 header {
-  height: 48px;
-  background: lightgreen;
+  height: 75px;
+  background: #fff;
 }
-.header__logo,
-.menu {
-  display: block;
-  height: 48px;
+/*same as header a*/
+.header__logo {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  width: 350px;
+  display: inline-block;
   float: left;
 }
+.header__logo img {
+  max-width: 100%;
+  height: 75px;
+  margin-left: 25px;
+}
 /***************************
-  Preamble: Global Vars
+  Navigation Style Rules
 ***************************/
-* {
-  box-sizing: border-box;
-}
-body {
-  background: beige;
-}
-.header__logo {
-  background: skyblue;
-}
 .menu {
-  background: cadetblue;
-}
-.menu a,
-.menu input {
   display: inline-block;
-  height: 48px;
-  line-height: 48px;
+  float: left;
+}
+.menu a:before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 2px;
+  bottom: 0;
+  left: 10%;
+  background-color: #F58220;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 .menu a {
-  background: mediumvioletred;
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  height: 75px;
+  line-height: 75px;
   width: 25%;
   float: left;
   text-align: center;
-  text-decoration: none;
 }
-.menu a:hover {
-  background: palevioletred;
+.menu a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+/***************************
+  Header Icons Style Rules
+***************************/
+.auxControlWrapper {
+  display: inline-block;
 }
 .auxControlWrapper #txtSearchBar {
   display: none;
 }
 .auxControlWrapper #auxLinkIcons {
+  height: 75px;
   float: right;
 }
 .auxControlWrapper #auxLinkIcons a {
@@ -237,4 +269,14 @@ body {
   width: 48px;
   height: 48px;
   border: 1px silver solid;
+}
+/***************************
+  Preamble: Global Vars
+***************************/
+* {
+  box-sizing: border-box;
+}
+body {
+  background: beige;
+  font-family: 'Source Sans Pro', sans-serif;
 }

@@ -1,69 +1,110 @@
 /***************************
-  Header Style Rules
+  Variables
 ***************************/
-.header__logo {
-    background: skyblue;
-  }
+@link-hover-color: #F58220;
 
+@header-background-color: #fff;
+@header-logo-height: 75px;
+@header-logo-width: 350px;
+@header-logo-max-width: 100%;
+@header-logo-margin-left: 25px;
+
+/***************************
+  Header Logo Style Rules
+***************************/
 header {
-    height: @navbar-height;
-    background: @navbar-background-color;
+  height: @header-logo-height;
+  background: @header-background-color;
+}
+
+/*same as header a*/
+.header__logo {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  width: @header-logo-width;
+  display: inline-block;
+  float: left;
+
+  img {
+    max-width: @header-logo-max-width;
+    height: @header-logo-height;
+    margin-left: @header-logo-margin-left;
   }
-  
-  .header__logo, .menu {
-    display: block;
-    height: @navbar-height;
-    float: left;
-  }
+}
 
 /***************************
   Navigation Style Rules
 ***************************/
 .menu {
-    background: cadetblue;
-    a, input {
-      display: inline-block;
-      height: @navbar-height;
-      line-height: @navbar-height;
-    }
-    a {
-      background: @navbar-link-color;
-      width: 25%;
-      float: left;
-      text-align: center;
-      text-decoration: none;
-      &:hover {
-        background: @navbar-link-hover-color;
-      }
-    }
+  display: inline-block;
+  float: left;
+
+  a:before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    bottom: 0;
+    left: 10%;
+    background-color: @link-hover-color;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
   }
-  
-  .auxControlWrapper {
-    #txtSearchBar {
-      .displayHidden();
-    }
-    #auxLinkIcons {
-      float: right;
-  
-      a {
-        float: left;
-      }
-  
-      a:first-of-type {
-        .icon();
-        border-right-style: none;
-        background: url("@{ico-path}/zoom_icon&32.png") no-repeat center center;
-      }
-  
-      #icoSettings {
-        background: url("@{ico-path}/cog_icon&32.png") no-repeat center center;
-      }
-    }
-  }
-  
-  .icon {
+
+  a {
+    position: relative;
+    text-decoration: none;
     display: inline-block;
-    width: 48px;
-    height: 48px;
-    border: 1px silver solid;
+    height: @header-logo-height;
+    line-height: @header-logo-height;
+    width: 25%;
+    float: left;
+    text-align: center;
+    &:hover:before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
   }
+}
+
+/***************************
+  Header Icons Style Rules
+***************************/
+.auxControlWrapper {
+  display:inline-block;
+
+  #txtSearchBar {
+    .displayHidden();
+  }
+  #auxLinkIcons {
+    height: @header-logo-height;
+    float:right;
+
+    a {
+      float: left;
+      //margin-top: 15px;
+    }
+
+    a:first-of-type {
+      .icon();
+      border-right-style: none;
+      background: url("@{ico-path}/zoom_icon&32.png") no-repeat center center;
+    }
+
+    #icoSettings {
+      background: url("@{ico-path}/cog_icon&32.png") no-repeat center center;
+    }
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border: 1px silver solid;
+}
