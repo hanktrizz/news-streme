@@ -27,20 +27,22 @@
     <header class="header col-12">
         <a href="#" class="header__logo"><img src="assets/images/NewsStreme_Logo.jpg" />NEWSSTREME</a>
 
-        <nav class="menu col-6">
-            <a href="#">World</a>
-            <a href="#">Australian</a>
-            <a href="#">Local</a>
-            <a href="#">All News</a>
-        </nav>
+        <div class="menu col-6">
+            <nav>
+                <a href="#">World</a>
+                <a href="#">Australian</a>
+                <a href="#">Local</a>
+                <a href="#">All News</a>
+            </nav>
+        </div>
 
-        <span class="auxControlWrapper col-3">
+        <!--<div class="auxControlWrapper col-1">-->
             <input id="txtSearchBar" placeholder="Search...">
             <span id="auxLinkIcons" class="">
                 <a href="#" class="icon"></a>
                 <a href="#" id="icoSettings" class="icon"></a>
             </span>
-        </span>
+        <!--</div>-->
 
     </header>
 
@@ -57,6 +59,9 @@
     <script src="app/shared/services/api.service.js"></script>
     <script src="app/landing/landing.component.js"></script>
     <script src="app/landing/landing.controller.js"></script>
+
+    <!--widget scripts-->
+    <script src="app/widgets/pagelabel.directive.js"></script>
 </body>
 
 </html>

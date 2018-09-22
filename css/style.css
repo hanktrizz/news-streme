@@ -129,12 +129,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g.ttf) format('truetype');
-}
 /***************************
   Less Partials Imports
 ***************************/
@@ -174,12 +168,6 @@ table {
 .col-12 {
   width: 100%;
 }
-.displayHidden {
-  display: none;
-}
-/***************************
-  Variables
-***************************/
 /***************************
   Header Logo Style Rules
 ***************************/
@@ -192,23 +180,24 @@ header {
   font: 0/0 a;
   text-shadow: none;
   color: transparent;
-  width: 350px;
-  display: inline-block;
+  max-width: 350px;
+  display: block;
   float: left;
 }
 .header__logo img {
   max-width: 100%;
   height: 75px;
-  margin-left: 25px;
 }
 /***************************
   Navigation Style Rules
 ***************************/
 .menu {
-  display: inline-block;
-  float: left;
+  margin: 0 auto;
 }
-.menu a:before {
+.menu nav {
+  height: 75px;
+}
+.menu nav a:before {
   content: "";
   position: absolute;
   width: 80%;
@@ -222,7 +211,7 @@ header {
   -webkit-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
 }
-.menu a {
+.menu nav a {
   position: relative;
   text-decoration: none;
   display: inline-block;
@@ -232,7 +221,7 @@ header {
   float: left;
   text-align: center;
 }
-.menu a:hover:before {
+.menu nav a:hover:before {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
@@ -240,38 +229,30 @@ header {
 /***************************
   Header Icons Style Rules
 ***************************/
-.auxControlWrapper {
-  display: inline-block;
-}
-.auxControlWrapper #txtSearchBar {
+#txtSearchBar {
   display: none;
 }
-.auxControlWrapper #auxLinkIcons {
-  height: 75px;
-  float: right;
+#auxLinkIcons {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
-.auxControlWrapper #auxLinkIcons a {
-  float: left;
-}
-.auxControlWrapper #auxLinkIcons a:first-of-type {
-  display: inline-block;
-  width: 48px;
-  height: 48px;
-  border: 1px silver solid;
-  border-right-style: none;
+#auxLinkIcons a:first-of-type {
   background: url("../assets/icons/zoom_icon&32.png") no-repeat center center;
 }
-.auxControlWrapper #auxLinkIcons #icoSettings {
+#auxLinkIcons #icoSettings {
   background: url("../assets/icons/cog_icon&32.png") no-repeat center center;
+}
+#auxLinkIcons #icoSettings:hover {
+  animation: spin 1s linear 1;
 }
 .icon {
   display: inline-block;
-  width: 48px;
-  height: 48px;
-  border: 1px silver solid;
+  width: 75px;
+  height: 75px;
 }
 /***************************
-  Preamble: Global Vars
+  Preamble: Globals
 ***************************/
 * {
   box-sizing: border-box;
@@ -279,4 +260,40 @@ header {
 body {
   background: beige;
   font-family: 'Source Sans Pro', sans-serif;
+}
+/***************************
+  Functions & Mixins
+***************************/
+.displayHidden {
+  display: none;
+}
+.rotateOnHover {
+  animation: spin 1s linear 1;
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(135deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(135deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+}
+/***************************
+  Widget Styles
+***************************/
+.wPageLabel {
+  background: #55B4E6;
+  color: #ffffff;
+  border-top: 3px solid #f58220;
+  height: 32px;
+  line-height: 29px;
+  padding: 0 1%;
 }

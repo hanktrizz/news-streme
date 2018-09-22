@@ -2,20 +2,33 @@
   Third Party/Vendor Imports
 ***************************/
 @import "vendor/reset.less";
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+//@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 /***************************
   Less Partials Imports
 ***************************/
 @import "responsive.less";
 @import "header.less";
 
-/***************************
-  Preamble: Global Vars
-***************************/
 @img-path: "../assets/images";
 @ico-path: "../assets/icons";
 
+@rotation-size-cogs: 135deg;
+
 @background-color: beige;
+@ps-blue: #0079c1;
+@ps-blue-contrast: #55B4E6;
+@ps-blue-light: #acd4f1;
+@ps-white: #ffffff;
+@ps-dark-navy: #2f3a42;
+@ps-navy: #2c648e;
+@ps-whitesmoke: #e1e2e3;
+@ps-orange: #f58220;
+
+@page-label-height: 32px;
+
+/***************************
+  Preamble: Globals
+***************************/
 
 * {
   box-sizing: border-box;
@@ -24,4 +37,46 @@
 body {
   background: @background-color;
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+/***************************
+  Functions & Mixins
+***************************/
+.displayHidden {
+  display: none;
+}
+
+.rotateOnHover {
+  animation: spin 1s linear 1;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(@rotation-size-cogs);
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(@rotation-size-cogs);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(@rotation-size-cogs);
+    transform: rotate(@rotation-size-cogs);
+  }
+}
+
+/***************************
+  Widget Styles
+***************************/
+.wPageLabel {
+  background: @ps-blue-contrast;
+  color: @ps-white;
+  border-top: 3px solid @ps-orange;
+  height: @page-label-height;
+  line-height: @page-label-height - 3px;
+  padding: 0 1%;
 }
