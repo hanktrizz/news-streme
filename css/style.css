@@ -168,73 +168,132 @@ table {
 .col-12 {
   width: 100%;
 }
-.displayHidden {
-  display: none;
+/***************************
+  Header Logo Style Rules
+***************************/
+header {
+  height: 75px;
+  background: #fff;
+}
+/*same as header a*/
+.header__logo {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  max-width: 350px;
+  display: block;
+  float: left;
+}
+.header__logo img {
+  max-width: 100%;
+  height: 75px;
 }
 /***************************
-  Preamble: Global Vars
+  Navigation Style Rules
+***************************/
+.menu {
+  margin: 0 auto;
+}
+.menu nav {
+  height: 75px;
+}
+.menu nav a:before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 2px;
+  bottom: 0;
+  left: 10%;
+  background-color: #F58220;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.menu nav a {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  height: 75px;
+  line-height: 75px;
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+.menu nav a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+/***************************
+  Header Icons Style Rules
+***************************/
+#txtSearchBar {
+  display: none;
+}
+#auxLinkIcons {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#auxLinkIcons a:first-of-type {
+  background: url("../assets/icons/zoom_icon&32.png") no-repeat center center;
+}
+#auxLinkIcons #icoSettings {
+  background: url("../assets/icons/cog_icon&32.png") no-repeat center center;
+}
+#auxLinkIcons #icoSettings:hover {
+  animation: spin 1s linear 1;
+}
+.icon {
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+}
+/***************************
+  Preamble: Globals
 ***************************/
 * {
   box-sizing: border-box;
 }
 body {
   background: beige;
+  font-family: 'Source Sans Pro', sans-serif;
 }
-header {
-  height: 48px;
-  background: lightgreen;
-}
-.header__logo,
-.menu {
-  display: block;
-  height: 48px;
-  float: left;
-}
-.header__logo {
-  background: skyblue;
-}
-.menu {
-  background: cadetblue;
-}
-.menu a,
-.menu input {
-  display: inline-block;
-  height: 48px;
-  line-height: 48px;
-}
-.menu a {
-  background: mediumvioletred;
-  width: 25%;
-  float: left;
-  text-align: center;
-  text-decoration: none;
-}
-.menu a:hover {
-  background: palevioletred;
-}
-.auxControlWrapper #txtSearchBar {
+/***************************
+  Functions & Mixins
+***************************/
+.displayHidden {
   display: none;
 }
-.auxControlWrapper #auxLinkIcons {
-  float: right;
+.rotateOnHover {
+  animation: spin 1s linear 1;
 }
-.auxControlWrapper #auxLinkIcons a {
-  float: left;
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(135deg);
+  }
 }
-.auxControlWrapper #auxLinkIcons a:first-of-type {
-  display: inline-block;
-  width: 48px;
-  height: 48px;
-  border: 1px silver solid;
-  border-right-style: none;
-  background: url("../assets//zoom_icon&32.png") no-repeat center center;
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(135deg);
+  }
 }
-.auxControlWrapper #auxLinkIcons #icoSettings {
-  background: url("../assets//cog_icon&32.png") no-repeat center center;
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
 }
-.icon {
-  display: inline-block;
-  width: 48px;
-  height: 48px;
-  border: 1px silver solid;
+/***************************
+  Widget Styles
+***************************/
+.wPageLabel {
+  background: #55B4E6;
+  color: #ffffff;
+  border-top: 3px solid #f58220;
+  height: 32px;
+  line-height: 29px;
+  padding: 0 1%;
 }

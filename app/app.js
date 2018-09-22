@@ -8,7 +8,5 @@ angular
             .when("/", {
                 template: "<landing></landing>"
             })
-            .otherwise({
-
-            });
+            .otherwise({});
     }]);

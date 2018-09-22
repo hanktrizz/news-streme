@@ -32,6 +32,16 @@ angular
                         reject('Error @ getNews() : params object does not have valid parameters for GET request');
                     }
                 });
+            },
+            getArticlesWithImageURL: function (jsonDataArray) {
+                var filteredData = [];
+                if (jsonDataArray && jsonDataArray.articles && jsonDataArray.articles.length) {
+                    filteredData = jsonDataArray.articles.filter(function (t) {
+                        return t.urlToImage != null;
+                    });
+                    console.log(filteredData);
+                } //TODO: Polyfill for older IE versions if time permits
+                return filteredData;
             }
         }
     }]);

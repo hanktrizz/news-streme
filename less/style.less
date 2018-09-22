@@ -2,24 +2,33 @@
   Third Party/Vendor Imports
 ***************************/
 @import "vendor/reset.less";
+//@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 /***************************
   Less Partials Imports
 ***************************/
 @import "responsive.less";
-/***************************
-  Preamble: Global Vars
-***************************/
-@img-path: "../assets/";
+@import "header.less";
+
+@img-path: "../assets/images";
+@ico-path: "../assets/icons";
+
+@rotation-size-cogs: 135deg;
 
 @background-color: beige;
+@ps-blue: #0079c1;
+@ps-blue-contrast: #55B4E6;
+@ps-blue-light: #acd4f1;
+@ps-white: #ffffff;
+@ps-dark-navy: #2f3a42;
+@ps-navy: #2c648e;
+@ps-whitesmoke: #e1e2e3;
+@ps-orange: #f58220;
 
-@navbar-height: 48px;
-@navbar-item-width: 100px;
-@navbar-padding: 4px 0;
-@navbar-line-height: 48px;
-@navbar-background-color: lightgreen;
-@navbar-link-color: mediumvioletred;
-@navbar-link-hover-color: palevioletred;
+@page-label-height: 32px;
+
+/***************************
+  Preamble: Globals
+***************************/
 
 * {
   box-sizing: border-box;
@@ -27,71 +36,47 @@
 
 body {
   background: @background-color;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-header {
-  height: @navbar-height;
-  background: @navbar-background-color;
+/***************************
+  Functions & Mixins
+***************************/
+.displayHidden {
+  display: none;
 }
 
-.header__logo, .menu {
-  display: block;
-  height: @navbar-height;
-  float: left;
+.rotateOnHover {
+  animation: spin 1s linear 1;
 }
 
-.header__logo {
-  background: skyblue;
-}
-
-.menu {
-  background: cadetblue;
-  a, input {
-    display: inline-block;
-    height: @navbar-height;
-    line-height: @navbar-height;
-  }
-  a {
-    background: @navbar-link-color;
-    width: 25%;
-    float: left;
-    text-align: center;
-    text-decoration: none;
-    &:hover {
-      background: @navbar-link-hover-color;
-    }
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(@rotation-size-cogs);
   }
 }
 
-.auxControlWrapper {
-  #txtSearchBar {
-    .displayHidden();
-  }
-  #auxLinkIcons {
-    float: right;
-
-    a {
-      float: left;
-    }
-
-    a:first-of-type {
-      .icon();
-      border-right-style: none;
-      background: url("@{img-path}/zoom_icon&32.png") no-repeat center center;
-    }
-
-    #icoSettings {
-      background: url("@{img-path}/cog_icon&32.png") no-repeat center center;
-    }
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(@rotation-size-cogs);
   }
 }
 
-.icon {
-  display: inline-block;
-  width: 48px;
-  height: 48px;
-  border: 1px silver solid;
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(@rotation-size-cogs);
+    transform: rotate(@rotation-size-cogs);
+  }
 }
 
-
-
+/***************************
+  Widget Styles
+***************************/
+.wPageLabel {
+  background: @ps-blue-contrast;
+  color: @ps-white;
+  border-top: 3px solid @ps-orange;
+  height: @page-label-height;
+  line-height: @page-label-height - 3px;
+  padding: 0 1%;
+}
