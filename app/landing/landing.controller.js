@@ -17,6 +17,4 @@ angular
         }, function (reason) {
             alert('Failed: ' + reason);
         });
-
-
     }]);
