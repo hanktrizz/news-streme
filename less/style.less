@@ -26,6 +26,9 @@
 
 @page-label-height: 32px;
 
+@widget-featured-height: 480px;
+@widget-featured-border: 5px solid white;
+
 /***************************
   Preamble: Globals
 ***************************/
@@ -80,3 +83,62 @@ body {
   line-height: @page-label-height - 3px;
   padding: 0 1%;
 }
+
+.rhsMiniBox {
+  width: 50%;
+  .wFeatured-common();
+  height: @widget-featured-height / 2;
+  float: left;
+}
+
+.lhsLargeBox {
+  width: 100%;
+  .wFeatured-common();
+  height: @widget-featured-height;
+}
+
+.wFeatured-common {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+    width: 100%;
+  }
+}
+
+#divFeaturedArticlesWrapper {
+  .col-12();
+  height: @widget-featured-height;
+  overflow: hidden;
+  border: @widget-featured-border;
+
+  #divFeaturedLHS {
+    .col-6();
+    float: left;
+  }
+
+  #divFeaturedRHS {
+    .col-6();
+    float: right;
+  }
+}
+
+.divFeaturedRHSSubWrapper{
+  border-left: @widget-featured-border;
+
+}
+
+
+
+
+
+
