@@ -8,6 +8,7 @@
 ***************************/
 @import "responsive.less";
 @import "header.less";
+@import "footer.less";
 
 @img-path: "../assets/images";
 @ico-path: "../assets/icons";
@@ -26,8 +27,10 @@
 
 @page-label-height: 32px;
 
-@widget-featured-height: 480px;
-@widget-featured-border: 5px solid white;
+@widget-featured-height: 80vh;
+@widget-featured-border: solid white 5px;
+
+@padding-landing: 0 1%;
 
 /***************************
   Preamble: Globals
@@ -81,7 +84,7 @@ body {
   border-top: 3px solid @ps-orange;
   height: @page-label-height;
   line-height: @page-label-height - 3px;
-  padding: 0 1%;
+  padding: @padding-landing;
 }
 
 .rhsMiniBox {
@@ -132,13 +135,13 @@ body {
   }
 }
 
-.divFeaturedRHSSubWrapper{
+.rhsMiniBox {
   border-left: @widget-featured-border;
-
 }
 
-
-
-
-
+#bot-row {
+  .rhsMiniBox {
+    border-top: @widget-featured-border;
+  }
+}
 

@@ -251,6 +251,35 @@ header {
   width: 75px;
   height: 75px;
 }
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 38px;
+  line-height: 38px;
+}
+#footerWrap {
+  margin: 0 auto;
+  padding: 0 1%;
+  overflow: hidden;
+}
+.footerBlurb {
+  float: left;
+}
+.footerLinks {
+  float: right;
+}
+.footerLinks a {
+  text-decoration: none;
+}
+.footerLinks a::after {
+  content: "•";
+  margin: 0 8px;
+  opacity: 0.6;
+  color: blue;
+}
+.footerLinks a:last-child::after {
+  content: "";
+}
 /***************************
   Preamble: Globals
 ***************************/
@@ -302,7 +331,7 @@ body {
   position: relative;
   overflow: hidden;
   height: 300px;
-  height: 240px;
+  height: 40vh;
   float: left;
 }
 .rhsMiniBox img {
@@ -320,7 +349,7 @@ body {
   position: relative;
   overflow: hidden;
   height: 300px;
-  height: 480px;
+  height: 80vh;
 }
 .lhsLargeBox img {
   width: 100%;
@@ -349,9 +378,9 @@ body {
 }
 #divFeaturedArticlesWrapper {
   width: 100%;
-  height: 480px;
+  height: 80vh;
   overflow: hidden;
-  border: 5px solid white;
+  border: solid white 5px;
 }
 #divFeaturedArticlesWrapper #divFeaturedLHS {
   width: 50%;
@@ -361,6 +390,9 @@ body {
   width: 50%;
   float: right;
 }
-.divFeaturedRHSSubWrapper {
-  border-left: 5px solid white;
+.rhsMiniBox {
+  border-left: solid white 5px;
+}
+#bot-row .rhsMiniBox {
+  border-top: solid white 5px;
 }
