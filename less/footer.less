@@ -1,0 +1,39 @@
+@footer-height: 38px;
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: @footer-height;
+  line-height:@footer-height;
+}
+
+#footerWrap {
+  margin: 0 auto;
+  padding: @padding-landing;
+  overflow: hidden;
+}
+
+.footerBlurb {
+  float: left;
+}
+
+.footerLinks {
+  float: right;
+  a {
+    text-decoration: none;
+    &:hover {
+
+    }
+  }
+}
+
+.footerLinks a::after {
+  content: "•";
+  margin: 0 8px;
+  opacity: 0.6;
+  color: blue;
+}
+
+.footerLinks a:last-child::after {
+  content: "";
+}
