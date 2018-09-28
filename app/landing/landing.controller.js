@@ -12,7 +12,7 @@ angular
         promise.then(function (data) {
             self.headlines = data;
             if (data) {
-                // self.headlines = NewsApiService.getArticlesWithImageURL(data);
+
             }
         }, function (reason) {
             alert('Failed: ' + reason);

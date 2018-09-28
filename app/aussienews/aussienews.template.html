@@ -1,1 +1,19 @@
 <page-label current-page="vm.title"></page-label>
+
+<div class="categoryWrapper">
+    <div class="div1">
+        <div ng-repeat="item in vm.data" ng-if="$index < 5" class='articleDiv'>
+            <div class="imgDiv"><img
+                    ng-src='{{item.urlToImage? item.urlToImage: DEFAULT_IMG_URI.IMG_PLACEHOLDER_URI}}'/>
+            </div>
+            <div class='caption'>
+                <h1>{{item.title}}</h1>
+                <p>{{item.description}}</p>
+            </div>
+            <hr/>
+        </div>
+    </div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+</div>
+

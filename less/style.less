@@ -32,6 +32,7 @@
 
 @padding-landing: 0 1%;
 
+@border-text-standard: solid @ps-orange 1px;
 /***************************
   Preamble: Globals
 ***************************/
@@ -145,3 +146,31 @@ body {
   }
 }
 
+/***************************
+  Miscellaneous Styles
+***************************/
+.wrapperMain {
+  height: 80vh;
+  .center {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px; /* margin is -0.5 * dimension */
+    margin-top: -25px;
+    #errorTxt {
+      span {
+        font-size: 36pt;
+        color: @ps-blue;
+        border: 1px solid @ps-blue;
+        border-radius: 16px;
+        padding: 5px 5px;
+      }
+    }
+    p {
+      margin: 10px 10px;
+      color: @ps-orange;
+    }
+  }
+}

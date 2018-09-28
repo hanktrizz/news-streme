@@ -11,5 +11,19 @@ angular
             .when("/aussienews", {
                 template: "<aussienews></aussienews>"
             })
-            .otherwise({});
+            .when("/world", {
+                template: "<world></world>"
+            })
+            .when("/victoria", {
+                template: "<victoria></victoria>"
+            })
+            .when("/all", {
+                template: "<all></all>"
+            })
+            .when("/article", {
+                template: "<articleviewview></articleviewview>"
+            })
+            .otherwise({
+                templateUrl: 'app/pagenotfound/pagenotfound.template.html'
+            });
     }]);
