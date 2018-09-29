@@ -1,6 +1,3 @@
-/***************************
-  Third Party/Vendor Imports
-***************************/
 @import "vendor/reset.less";
 //@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 /***************************
@@ -27,12 +24,14 @@
 
 @page-label-height: 32px;
 
-@widget-featured-height: 80vh;
+@widget-featured-height: 50vh;
 @widget-featured-border: solid white 5px;
 
 @padding-landing: 0 1%;
+@margin-centering: 0 auto;
 
 @border-text-standard: solid @ps-orange 1px;
+@border-text-heading: solid @ps-orange 3px;
 /***************************
   Preamble: Globals
 ***************************/
@@ -80,7 +79,7 @@ body {
   Widget Styles
 ***************************/
 .wPageLabel {
-  background: @ps-blue-contrast;
+  background: @ps-navy;
   color: @ps-white;
   border-top: 3px solid @ps-orange;
   height: @page-label-height;
@@ -147,7 +146,7 @@ body {
 }
 
 /***************************
-  Miscellaneous Styles
+  404 Error Page Style
 ***************************/
 .wrapperMain {
   height: 80vh;
@@ -172,5 +171,95 @@ body {
       margin: 10px 10px;
       color: @ps-orange;
     }
+  }
+}
+
+/***************************
+  world/aussie/VIC/all news
+***************************/
+@category-h1-size: 14pt;
+@category-h1-margin: 2vh 2 * @gap-size;
+@category-h2-size: 12pt;
+@article-panel-strip-font-size: 9pt;
+
+@divSelectors: 1, 2, 3;
+@article-panel-strip-width: 33.3%;
+@article-panel-strip-width-actual: 32%;
+@gap-size: 1vh;
+@thumbnail-size: 48px;
+
+.categoryWrapper {
+  .col-11();
+  overflow: hidden;
+  margin: @margin-centering;
+
+  h1 {
+    font-size: @category-h1-size;
+    margin: @category-h1-margin;
+    font-weight: bold;
+    text-align: right;
+    span {
+      border-bottom: @border-text-heading;
+    }
+  }
+
+  .routeLHS {
+    width: 70%;
+    float: left;
+  }
+
+  .routeRHS {
+    width: 30%;
+    float: right;
+  }
+}
+
+each(@divSelectors, {
+  .div@{value} {
+    .panel-strips();
+  }
+});
+
+.panel-strips {
+  width: @article-panel-strip-width-actual;
+  float: left;
+  margin-right: @article-panel-strip-width - @article-panel-strip-width-actual;
+
+  .articleDiv {
+    margin-bottom: 2 * @gap-size;
+    background-color: @ps-whitesmoke;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .caption {
+      padding: @gap-size;
+      h2 {
+        font-size: @category-h2-size;
+        font-weight: bold;
+      }
+      p {
+        font-size: @article-panel-strip-font-size;
+        margin-top: @gap-size;
+      }
+    }
+  }
+}
+
+.blurb {
+  padding: 0 0 2*@gap-size 0;
+  background: yellowgreen;
+  overflow: hidden;
+
+  img {
+    width: @thumbnail-size;
+    height: @thumbnail-size;
+    float: left;
+    display: block;
+  }
+  p {
+    float: left;
+    max-width: 320px;
+    margin-left: @gap-size;
   }
 }

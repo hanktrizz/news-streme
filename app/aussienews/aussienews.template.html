@@ -1,19 +1,50 @@
 <page-label current-page="vm.title"></page-label>
 
 <div class="categoryWrapper">
-    <div class="div1">
-        <div ng-repeat="item in vm.data" ng-if="$index < 5" class='articleDiv'>
-            <div class="imgDiv"><img
-                    ng-src='{{item.urlToImage? item.urlToImage: DEFAULT_IMG_URI.IMG_PLACEHOLDER_URI}}'/>
+    <div class="routeLHS">
+        <h1><span>Featured</span></h1>
+        <div class="div1">
+            <div ng-repeat="item in vm.cleanedData.chunk1" class='articleDiv'>
+                <div class="imgDiv"><img
+                        ng-src='{{item.urlToImage? item.urlToImage: vm.imgSrc}}'/>
+                </div>
+                <div class='caption'>
+                    <h2>{{item.title}}</h2>
+                    <p>{{item.description}}</p>
+                </div>
             </div>
-            <div class='caption'>
-                <h1>{{item.title}}</h1>
-                <p>{{item.description}}</p>
+        </div>
+        <div class="div2">
+            <div ng-repeat="item in vm.cleanedData.chunk2" class='articleDiv'>
+                <div class="imgDiv"><img
+                        ng-src='{{item.urlToImage? item.urlToImage: vm.imgSrc}}'/>
+                </div>
+                <div class='caption'>
+                    <h2>{{item.title}}</h2>
+                    <p>{{item.description}}</p>
+                </div>
             </div>
-            <hr/>
+        </div>
+        <div class="div3">
+            <div ng-repeat="item in vm.cleanedData.chunk3" class='articleDiv'>
+                <div class="imgDiv"><img
+                        ng-src='{{item.urlToImage? item.urlToImage: vm.imgSrc}}'/>
+                </div>
+                <div class='caption'>
+                    <h2>{{item.title}}</h2>
+                    <p>{{item.description}}</p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="div2"></div>
-    <div class="div3"></div>
+    <div class="routeRHS">
+        <h1><span>Hot</span></h1>
+        <div class="divHotList">
+            <div class="blurb" ng-repeat="blurb in vm.cleanedData.chunk4">
+                <img ng-src='{{blurb.urlToImage? blurb.urlToImage: vm.imgSrc}}'/>
+                <p>{{blurb.title}}</p>
+            </div>
+        </div>
+    </div>
 </div>
 
