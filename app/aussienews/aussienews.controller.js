@@ -12,7 +12,6 @@ angular
         self.$onInit = function () {
             NewsApiService.getNews({country: "au"}).then(function (resp) {
                 self.data = resp.articles;
-                //break the array into 4 chunks - better than ng-repeat in range using $index as it is expensive
                 if (self.data) {
                     angular.forEach(self.data, function (v, i) {
                         if (i < 5)

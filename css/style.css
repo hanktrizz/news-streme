@@ -270,7 +270,7 @@ header {
   box-sizing: border-box;
 }
 body {
-  background: #e1e2e3;
+  background-color: lightgray;
   font-family: 'Source Sans Pro', sans-serif;
 }
 em {
@@ -329,6 +329,16 @@ em {
   bottom: 0;
   background: rgba(255, 255, 255, 0.5);
   width: 100%;
+  min-height: 70px;
+}
+.rhsMiniBox .caption p:first-of-type {
+  font-size: 14pt;
+  font-weight: bold;
+  margin-bottom: 1vh;
+}
+.rhsMiniBox .caption .pDesc {
+  font-size: 10pt;
+  min-height: 40px;
 }
 .lhsLargeBox {
   width: 100%;
@@ -346,6 +356,16 @@ em {
   bottom: 0;
   background: rgba(255, 255, 255, 0.5);
   width: 100%;
+  min-height: 70px;
+}
+.lhsLargeBox .caption p:first-of-type {
+  font-size: 14pt;
+  font-weight: bold;
+  margin-bottom: 1vh;
+}
+.lhsLargeBox .caption .pDesc {
+  font-size: 10pt;
+  min-height: 40px;
 }
 .lhsLargeBox .eyecatchingtext {
   font-size: 24pt;
@@ -372,6 +392,16 @@ em {
   bottom: 0;
   background: rgba(255, 255, 255, 0.5);
   width: 100%;
+  min-height: 70px;
+}
+.wFeatured-common .caption p:first-of-type {
+  font-size: 14pt;
+  font-weight: bold;
+  margin-bottom: 1vh;
+}
+.wFeatured-common .caption .pDesc {
+  font-size: 10pt;
+  min-height: 40px;
 }
 #divFeaturedArticlesWrapper {
   width: 91.66%;
