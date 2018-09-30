@@ -41,7 +41,7 @@
 }
 
 body {
-  background: @background-color;
+  background: @ps-whitesmoke;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -102,6 +102,17 @@ em {
   width: 100%;
   .wFeatured-common();
   height: @widget-featured-height;
+  .eyecatchingtext {
+    font-size: 24pt;
+    width: 360px;
+    position: absolute;
+    color: @ps-white;
+    bottom: 80px;
+    left: 40px;
+    span {
+      background: @ps-dark-navy;
+    }
+  }
 }
 
 .wFeatured-common {
@@ -219,6 +230,7 @@ h1 {
   }
 }
 
+
 each(@divSelectors, {
   .div@{value} {
     .panel-strips();
@@ -253,7 +265,6 @@ each(@divSelectors, {
 
 .blurb {
   padding: 0 0 2*@gap-size 0;
-  background: yellowgreen;
   overflow: hidden;
 
   img {
@@ -301,19 +312,20 @@ each(@divSelectors, {
     width: 40%;
     float: right;
 
-    .ps-link{
+    .ps-link {
       width: 100%;
       height: 32px;
-      div{
+      margin-bottom: @gap-size;
+      div {
         width: 32px;
         height: 32px;
         background-color: @ps-dark-navy;
         color: @ps-orange;
-        text-align:center;
+        text-align: center;
         line-height: 32px;
         font-weight: bold;
         border-radius: 32px;
-        float:left;
+        float: left;
       }
       a {
         float: left;

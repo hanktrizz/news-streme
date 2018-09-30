@@ -33,6 +33,25 @@ angular
                     }
                 });
             },
+            //Exactly similar to the function above except for the endpoints.
+            // TODO: Modify above function to add ENDPOINTS as a param obj attr to reduce code redundancy (was lazy)
+            getAllNews: function (params) {
+                return $q(function (resolve, reject) {
+                    if (params && !angular.equals(params, {})) {
+                        // Make a GET request to the api based on supplied parameters
+                        return $http.get(NEWS_API_URL + ENDPOINTS.EVERYTHING + getQueryStringFromParams(params), {
+                            headers: {'X-Api-Key': API_KEY}
+                        }).then(function (response) {
+                            console.log('Fetching news data from API...');
+                            resolve(response.data);
+                        }, function (response) {
+                            reject('Error @ getNews(): no data fetched from api');
+                        });
+                    } else {
+                        reject('Error @ getNews() : params object does not have valid parameters for GET request');
+                    }
+                });
+            },
             getArticlesWithImageURL: function (jsonDataArray) {
                 var filteredData = [];
                 if (jsonDataArray && jsonDataArray.articles && jsonDataArray.articles.length) {
@@ -41,7 +60,7 @@ angular
                     });
                     console.log(filteredData);
                 } //TODO: Polyfill for older IE versions if time permits
-                return filteredData;
+                return filteredData.length >= 5 ? filteredData : jsonDataArray.articles;
             }
         }
     }]);

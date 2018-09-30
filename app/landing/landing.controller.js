@@ -9,13 +9,14 @@ angular
 
         //data variables
         self.headlines = null;
+        self.headlines_comprehensive = null;
         self.quote = null;
 
-        var promise = NewsApiService.getNews({country: "au", category: "business"});
+        var promise = NewsApiService.getNews({country: "au"});
         promise.then(function (data) {
-            self.headlines = data;
+            // self.headlines = data;
             if (data) {
-
+                self.headlines_comprehensive = NewsApiService.getArticlesWithImageURL(data);
             }
         }, function (reason) {
             alert('Failed: ' + reason);

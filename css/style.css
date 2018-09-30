@@ -194,34 +194,18 @@ header {
 .menu nav {
   height: 75px;
 }
-.menu nav a:before {
-  content: "";
-  position: absolute;
-  width: 80%;
-  height: 2px;
-  bottom: 0;
-  left: 10%;
-  background-color: #F58220;
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
-}
 .menu nav a {
   position: relative;
   text-decoration: none;
   display: inline-block;
   height: 75px;
   line-height: 75px;
-  width: 25%;
+  width: 15%;
   float: left;
   text-align: center;
 }
-.menu nav a:hover:before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
+.menu nav a:hover {
+  color: #f58220;
 }
 /***************************
   Header Icons Style Rules
@@ -286,7 +270,7 @@ header {
   box-sizing: border-box;
 }
 body {
-  background: beige;
+  background: #e1e2e3;
   font-family: 'Source Sans Pro', sans-serif;
 }
 em {
@@ -362,6 +346,17 @@ em {
   bottom: 0;
   background: rgba(255, 255, 255, 0.5);
   width: 100%;
+}
+.lhsLargeBox .eyecatchingtext {
+  font-size: 24pt;
+  width: 360px;
+  position: absolute;
+  color: #ffffff;
+  bottom: 80px;
+  left: 40px;
+}
+.lhsLargeBox .eyecatchingtext span {
+  background: #2f3a42;
 }
 .wFeatured-common {
   position: relative;
@@ -549,7 +544,6 @@ h1 span {
 }
 .blurb {
   padding: 0 0 2vh 0;
-  background: yellowgreen;
   overflow: hidden;
 }
 .blurb img {
@@ -596,6 +590,7 @@ h1 span {
 #divMidSection #divMiscellaneousWrap .ps-link {
   width: 100%;
   height: 32px;
+  margin-bottom: 1vh;
 }
 #divMidSection #divMiscellaneousWrap .ps-link div {
   width: 32px;
