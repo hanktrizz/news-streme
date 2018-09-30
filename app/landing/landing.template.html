@@ -1,6 +1,33 @@
 <page-label current-page="$ctrl.title"></page-label>
-
-<!--<p>{{$ctrl.headlines}}</p>-->
-
 <featured-articles></featured-articles>
 
+<div id="divMidSection">
+
+    <div id="divCategoriesWrap">
+        <h1><span>Categories</span></h1>
+        <div class="divCat" ng-repeat="(key,value) in $ctrl.cats">
+            <category-board cat="value[0]" image-url="value[1]"></category-board>
+        </div>
+    </div>
+    <div id="divMiscellaneousWrap">
+        <h1><span>Inspiration</span></h1>
+        <div class="divMisc">
+            <em>"{{$ctrl.quote.quote}}"</em>
+            <br/><br/><span>&#8213; {{$ctrl.quote.author}}</span>
+        </div>
+
+        <div class="divMisc">
+            <h1><span>PeopleStreme News</span></h1>
+            <div class="ps-link">
+                <div>1</div>
+                <a href="https://www.theaustralian.com.au/business/technology/payroll-software-provider-ascender-acquires-peoplestreme/news-story/ba1c4df1d23a4d48dbea91305aa260fc">
+                    Payroll software provider Ascender acquires PeopleStreme</a>
+            </div>
+            <div class="ps-link">
+                <div>2</div>
+                <a href="https://www.hcamag.com/hr-news/ascender-to-acquire-hcm-company-peoplestreme-255059.aspx">
+                    Ascender to acquire HCM company PeopleStreme</a>
+            </div>
+        </div>
+    </div>
+</div>

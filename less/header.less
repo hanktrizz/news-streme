@@ -39,37 +39,41 @@ header {
   nav {
     height: @header-logo-height;
 
-    a:before {
-      content: "";
-      position: absolute;
-      width: 80%;
-      height: 2px;
-      bottom: 0;
-      left: 10%;
-      background-color: @link-hover-color;
-      visibility: hidden;
-      -webkit-transform: scaleX(0);
-      transform: scaleX(0);
-      -webkit-transition: all 0.3s ease-in-out 0s;
-      transition: all 0.3s ease-in-out 0s;
-    }
-
+    //a:before {
+    //  content: "";
+    //  position: absolute;
+    //  width: 80%;
+    //  height: 2px;
+    //  bottom: 0;
+    //  left: 10%;
+    //  background-color: @link-hover-color;
+    //  visibility: hidden;
+    //  -webkit-transform: scaleX(0);
+    //  transform: scaleX(0);
+    //  -webkit-transition: all 0.3s ease-in-out 0s;
+    //  transition: all 0.3s ease-in-out 0s;
+    //}
+    //
     a {
       position: relative;
       text-decoration: none;
       display: inline-block;
       height: @header-logo-height;
       line-height: @header-logo-height;
-      width: 25%;
+      width: 15%;
       float: left;
       text-align: center;
-      &:hover:before {
-        visibility: visible;
-        -webkit-transform: scaleX(1);
-        transform: scaleX(1);
+      //&:hover:before {
+      //visibility: visible;
+      //-webkit-transform: scaleX(1);
+      //transform: scaleX(1);
+      //}
+      &:hover {
+        color: @ps-orange;
       }
     }
   }
+
 }
 
 /***************************

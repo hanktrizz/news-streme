@@ -1,6 +1,3 @@
-/***************************
-  Third Party/Vendor Imports
-***************************/
 @import "vendor/reset.less";
 //@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 /***************************
@@ -27,11 +24,14 @@
 
 @page-label-height: 32px;
 
-@widget-featured-height: 80vh;
+@widget-featured-height: 60vh;
 @widget-featured-border: solid white 5px;
 
 @padding-landing: 0 1%;
+@margin-centering: 0 auto;
 
+@border-text-standard: solid @ps-orange 1px;
+@border-text-heading: solid @ps-orange 3px;
 /***************************
   Preamble: Globals
 ***************************/
@@ -41,8 +41,12 @@
 }
 
 body {
-  background: @background-color;
+  background: @ps-whitesmoke;
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+em {
+  font-style: italic;
 }
 
 /***************************
@@ -79,7 +83,7 @@ body {
   Widget Styles
 ***************************/
 .wPageLabel {
-  background: @ps-blue-contrast;
+  background: @ps-navy;
   color: @ps-white;
   border-top: 3px solid @ps-orange;
   height: @page-label-height;
@@ -98,6 +102,17 @@ body {
   width: 100%;
   .wFeatured-common();
   height: @widget-featured-height;
+  .eyecatchingtext {
+    font-size: 24pt;
+    width: 360px;
+    position: absolute;
+    color: @ps-white;
+    bottom: 80px;
+    left: 40px;
+    span {
+      background: @ps-dark-navy;
+    }
+  }
 }
 
 .wFeatured-common {
@@ -119,10 +134,11 @@ body {
 }
 
 #divFeaturedArticlesWrapper {
-  .col-12();
+  .col-11();
   height: @widget-featured-height;
   overflow: hidden;
   border: @widget-featured-border;
+  margin: @margin-centering;
 
   #divFeaturedLHS {
     .col-6();
@@ -142,6 +158,183 @@ body {
 #bot-row {
   .rhsMiniBox {
     border-top: @widget-featured-border;
+  }
+}
+
+/***************************
+  404 Error Page Style
+***************************/
+.wrapperMain {
+  height: 80vh;
+  .center {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px; /* margin is -0.5 * dimension */
+    margin-top: -25px;
+    #errorTxt {
+      span {
+        font-size: 36pt;
+        color: @ps-blue;
+        border: 1px solid @ps-blue;
+        border-radius: 16px;
+        padding: 5px 5px;
+      }
+    }
+    p {
+      margin: 10px 10px;
+      color: @ps-orange;
+    }
+  }
+}
+
+/***************************
+  world/aussie/VIC/all news
+***************************/
+@category-h1-size: 14pt;
+@category-h1-margin: 2vh 2 * @gap-size;
+@category-h2-size: 12pt;
+@article-panel-strip-font-size: 9pt;
+
+@divSelectors: 1, 2, 3;
+@article-panel-strip-width: 33.3%;
+@article-panel-strip-width-actual: 32%;
+@gap-size: 1vh;
+@thumbnail-size: 48px;
+
+h1 {
+  font-size: @category-h1-size;
+  margin: @category-h1-margin;
+  font-weight: bold;
+  text-align: right;
+  span {
+    border-bottom: @border-text-heading;
+  }
+}
+
+.categoryWrapper {
+  .col-11();
+  overflow: hidden;
+  margin: @margin-centering;
+
+  .routeLHS {
+    width: 70%;
+    float: left;
+  }
+
+  .routeRHS {
+    width: 30%;
+    float: right;
+  }
+}
+
+
+each(@divSelectors, {
+  .div@{value} {
+    .panel-strips();
+  }
+});
+
+.panel-strips {
+  width: @article-panel-strip-width-actual;
+  float: left;
+  margin-right: @article-panel-strip-width - @article-panel-strip-width-actual;
+
+  .articleDiv {
+    margin-bottom: 2 * @gap-size;
+    background-color: @ps-whitesmoke;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .caption {
+      padding: @gap-size;
+      h2 {
+        font-size: @category-h2-size;
+        font-weight: bold;
+      }
+      p {
+        font-size: @article-panel-strip-font-size;
+        margin-top: @gap-size;
+      }
+    }
+  }
+}
+
+.blurb {
+  padding: 0 0 2*@gap-size 0;
+  overflow: hidden;
+
+  img {
+    width: @thumbnail-size;
+    height: @thumbnail-size;
+    float: left;
+    display: block;
+  }
+  p {
+    float: left;
+    max-width: 320px;
+    margin-left: @gap-size;
+  }
+}
+
+/***************************
+  Landing Page Style
+***************************/
+#divMidSection {
+  .col-11();
+  overflow: hidden;
+  margin: @margin-centering;
+
+  #divCategoriesWrap {
+    width: 60%;
+    float: left;
+
+    .divCat {
+      width: 120px;
+      float: left;
+      margin-right: 2.5*@gap-size;
+      p {
+        background: white;
+        text-align: center;
+        padding: 2vh 0;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  #divMiscellaneousWrap {
+    width: 40%;
+    float: right;
+
+    .ps-link {
+      width: 100%;
+      height: 32px;
+      margin-bottom: @gap-size;
+      div {
+        width: 32px;
+        height: 32px;
+        background-color: @ps-dark-navy;
+        color: @ps-orange;
+        text-align: center;
+        line-height: 32px;
+        font-weight: bold;
+        border-radius: 32px;
+        float: left;
+      }
+      a {
+        float: left;
+        margin-left: @gap-size;
+        display: inline-block;
+        width: 80%;
+        text-decoration: none;
+      }
+    }
   }
 }
 

@@ -1,6 +1,3 @@
-/***************************
-  Third Party/Vendor Imports
-***************************/
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -197,34 +194,18 @@ header {
 .menu nav {
   height: 75px;
 }
-.menu nav a:before {
-  content: "";
-  position: absolute;
-  width: 80%;
-  height: 2px;
-  bottom: 0;
-  left: 10%;
-  background-color: #F58220;
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
-}
 .menu nav a {
   position: relative;
   text-decoration: none;
   display: inline-block;
   height: 75px;
   line-height: 75px;
-  width: 25%;
+  width: 15%;
   float: left;
   text-align: center;
 }
-.menu nav a:hover:before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
+.menu nav a:hover {
+  color: #f58220;
 }
 /***************************
   Header Icons Style Rules
@@ -252,10 +233,11 @@ header {
   height: 75px;
 }
 .footer {
-  position: fixed;
-  bottom: 0;
+  background: #2f3a42;
+  color: #e1e2e3;
   height: 38px;
   line-height: 38px;
+  margin-top: 2vh;
 }
 #footerWrap {
   margin: 0 auto;
@@ -270,12 +252,13 @@ header {
 }
 .footerLinks a {
   text-decoration: none;
+  color: #e1e2e3;
 }
 .footerLinks a::after {
   content: "•";
   margin: 0 8px;
   opacity: 0.6;
-  color: blue;
+  color: #e1e2e3;
 }
 .footerLinks a:last-child::after {
   content: "";
@@ -287,8 +270,11 @@ header {
   box-sizing: border-box;
 }
 body {
-  background: beige;
+  background: #e1e2e3;
   font-family: 'Source Sans Pro', sans-serif;
+}
+em {
+  font-style: italic;
 }
 /***************************
   Functions & Mixins
@@ -319,7 +305,7 @@ body {
   Widget Styles
 ***************************/
 .wPageLabel {
-  background: #55B4E6;
+  background: #2c648e;
   color: #ffffff;
   border-top: 3px solid #f58220;
   height: 32px;
@@ -331,7 +317,7 @@ body {
   position: relative;
   overflow: hidden;
   height: 300px;
-  height: 40vh;
+  height: 30vh;
   float: left;
 }
 .rhsMiniBox img {
@@ -349,7 +335,7 @@ body {
   position: relative;
   overflow: hidden;
   height: 300px;
-  height: 80vh;
+  height: 60vh;
 }
 .lhsLargeBox img {
   width: 100%;
@@ -360,6 +346,17 @@ body {
   bottom: 0;
   background: rgba(255, 255, 255, 0.5);
   width: 100%;
+}
+.lhsLargeBox .eyecatchingtext {
+  font-size: 24pt;
+  width: 360px;
+  position: absolute;
+  color: #ffffff;
+  bottom: 80px;
+  left: 40px;
+}
+.lhsLargeBox .eyecatchingtext span {
+  background: #2f3a42;
 }
 .wFeatured-common {
   position: relative;
@@ -377,10 +374,11 @@ body {
   width: 100%;
 }
 #divFeaturedArticlesWrapper {
-  width: 100%;
-  height: 80vh;
+  width: 91.66%;
+  height: 60vh;
   overflow: hidden;
   border: solid white 5px;
+  margin: 0 auto;
 }
 #divFeaturedArticlesWrapper #divFeaturedLHS {
   width: 50%;
@@ -395,4 +393,220 @@ body {
 }
 #bot-row .rhsMiniBox {
   border-top: solid white 5px;
+}
+/***************************
+  404 Error Page Style
+***************************/
+.wrapperMain {
+  height: 80vh;
+}
+.wrapperMain .center {
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  /* margin is -0.5 * dimension */
+  margin-top: -25px;
+}
+.wrapperMain .center #errorTxt span {
+  font-size: 36pt;
+  color: #0079c1;
+  border: 1px solid #0079c1;
+  border-radius: 16px;
+  padding: 5px 5px;
+}
+.wrapperMain .center p {
+  margin: 10px 10px;
+  color: #f58220;
+}
+/***************************
+  world/aussie/VIC/all news
+***************************/
+h1 {
+  font-size: 14pt;
+  margin: 2vh 2vh;
+  font-weight: bold;
+  text-align: right;
+}
+h1 span {
+  border-bottom: solid #f58220 3px;
+}
+.categoryWrapper {
+  width: 91.66%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.categoryWrapper .routeLHS {
+  width: 70%;
+  float: left;
+}
+.categoryWrapper .routeRHS {
+  width: 30%;
+  float: right;
+}
+.div1 {
+  width: 32%;
+  float: left;
+  margin-right: 1.3%;
+}
+.div1 .articleDiv {
+  margin-bottom: 2vh;
+  background-color: #e1e2e3;
+}
+.div1 .articleDiv img {
+  width: 100%;
+  height: 100%;
+}
+.div1 .articleDiv .caption {
+  padding: 1vh;
+}
+.div1 .articleDiv .caption h2 {
+  font-size: 12pt;
+  font-weight: bold;
+}
+.div1 .articleDiv .caption p {
+  font-size: 9pt;
+  margin-top: 1vh;
+}
+.div2 {
+  width: 32%;
+  float: left;
+  margin-right: 1.3%;
+}
+.div2 .articleDiv {
+  margin-bottom: 2vh;
+  background-color: #e1e2e3;
+}
+.div2 .articleDiv img {
+  width: 100%;
+  height: 100%;
+}
+.div2 .articleDiv .caption {
+  padding: 1vh;
+}
+.div2 .articleDiv .caption h2 {
+  font-size: 12pt;
+  font-weight: bold;
+}
+.div2 .articleDiv .caption p {
+  font-size: 9pt;
+  margin-top: 1vh;
+}
+.div3 {
+  width: 32%;
+  float: left;
+  margin-right: 1.3%;
+}
+.div3 .articleDiv {
+  margin-bottom: 2vh;
+  background-color: #e1e2e3;
+}
+.div3 .articleDiv img {
+  width: 100%;
+  height: 100%;
+}
+.div3 .articleDiv .caption {
+  padding: 1vh;
+}
+.div3 .articleDiv .caption h2 {
+  font-size: 12pt;
+  font-weight: bold;
+}
+.div3 .articleDiv .caption p {
+  font-size: 9pt;
+  margin-top: 1vh;
+}
+.panel-strips {
+  width: 32%;
+  float: left;
+  margin-right: 1.3%;
+}
+.panel-strips .articleDiv {
+  margin-bottom: 2vh;
+  background-color: #e1e2e3;
+}
+.panel-strips .articleDiv img {
+  width: 100%;
+  height: 100%;
+}
+.panel-strips .articleDiv .caption {
+  padding: 1vh;
+}
+.panel-strips .articleDiv .caption h2 {
+  font-size: 12pt;
+  font-weight: bold;
+}
+.panel-strips .articleDiv .caption p {
+  font-size: 9pt;
+  margin-top: 1vh;
+}
+.blurb {
+  padding: 0 0 2vh 0;
+  overflow: hidden;
+}
+.blurb img {
+  width: 48px;
+  height: 48px;
+  float: left;
+  display: block;
+}
+.blurb p {
+  float: left;
+  max-width: 320px;
+  margin-left: 1vh;
+}
+/***************************
+  Landing Page Style
+***************************/
+#divMidSection {
+  width: 91.66%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+#divMidSection #divCategoriesWrap {
+  width: 60%;
+  float: left;
+}
+#divMidSection #divCategoriesWrap .divCat {
+  width: 120px;
+  float: left;
+  margin-right: 2.5vh;
+}
+#divMidSection #divCategoriesWrap .divCat p {
+  background: white;
+  text-align: center;
+  padding: 2vh 0;
+}
+#divMidSection #divCategoriesWrap .divCat img {
+  width: 100%;
+  height: 100%;
+}
+#divMidSection #divMiscellaneousWrap {
+  width: 40%;
+  float: right;
+}
+#divMidSection #divMiscellaneousWrap .ps-link {
+  width: 100%;
+  height: 32px;
+  margin-bottom: 1vh;
+}
+#divMidSection #divMiscellaneousWrap .ps-link div {
+  width: 32px;
+  height: 32px;
+  background-color: #2f3a42;
+  color: #f58220;
+  text-align: center;
+  line-height: 32px;
+  font-weight: bold;
+  border-radius: 32px;
+  float: left;
+}
+#divMidSection #divMiscellaneousWrap .ps-link a {
+  float: left;
+  margin-left: 1vh;
+  display: inline-block;
+  width: 80%;
+  text-decoration: none;
 }
