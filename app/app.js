@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-    .module('newsStreme', ['ngRoute', 'newsStreme.landing', 'newsStreme.aussienews'])
+    .module('newsStreme', ['ngRoute', 'newsStreme.landing', 'newsStreme.world', 'newsStreme.aussienews'])
     .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
         $routeProvider

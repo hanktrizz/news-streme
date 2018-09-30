@@ -1,10 +1,11 @@
 @footer-height: 38px;
 
 .footer {
-  position: fixed;
-  bottom: 0;
+  background: @ps-dark-navy;
+  color: @ps-whitesmoke;
   height: @footer-height;
-  line-height:@footer-height;
+  line-height: @footer-height;
+  margin-top: 2vh;
 }
 
 #footerWrap {
@@ -21,6 +22,7 @@
   float: right;
   a {
     text-decoration: none;
+    color: @ps-whitesmoke;
     &:hover {
 
     }
@@ -31,7 +33,7 @@
   content: "•";
   margin: 0 8px;
   opacity: 0.6;
-  color: blue;
+  color: @ps-whitesmoke;
 }
 
 .footerLinks a:last-child::after {

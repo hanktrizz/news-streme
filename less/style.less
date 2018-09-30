@@ -24,7 +24,7 @@
 
 @page-label-height: 32px;
 
-@widget-featured-height: 50vh;
+@widget-featured-height: 60vh;
 @widget-featured-border: solid white 5px;
 
 @padding-landing: 0 1%;
@@ -43,6 +43,10 @@
 body {
   background: @background-color;
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+em {
+  font-style: italic;
 }
 
 /***************************
@@ -119,10 +123,11 @@ body {
 }
 
 #divFeaturedArticlesWrapper {
-  .col-12();
+  .col-11();
   height: @widget-featured-height;
   overflow: hidden;
   border: @widget-featured-border;
+  margin: @margin-centering;
 
   #divFeaturedLHS {
     .col-6();
@@ -188,20 +193,20 @@ body {
 @gap-size: 1vh;
 @thumbnail-size: 48px;
 
+h1 {
+  font-size: @category-h1-size;
+  margin: @category-h1-margin;
+  font-weight: bold;
+  text-align: right;
+  span {
+    border-bottom: @border-text-heading;
+  }
+}
+
 .categoryWrapper {
   .col-11();
   overflow: hidden;
   margin: @margin-centering;
-
-  h1 {
-    font-size: @category-h1-size;
-    margin: @category-h1-margin;
-    font-weight: bold;
-    text-align: right;
-    span {
-      border-bottom: @border-text-heading;
-    }
-  }
 
   .routeLHS {
     width: 70%;
@@ -263,3 +268,61 @@ each(@divSelectors, {
     margin-left: @gap-size;
   }
 }
+
+/***************************
+  Landing Page Style
+***************************/
+#divMidSection {
+  .col-11();
+  overflow: hidden;
+  margin: @margin-centering;
+
+  #divCategoriesWrap {
+    width: 60%;
+    float: left;
+
+    .divCat {
+      width: 120px;
+      float: left;
+      margin-right: 2.5*@gap-size;
+      p {
+        background: white;
+        text-align: center;
+        padding: 2vh 0;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  #divMiscellaneousWrap {
+    width: 40%;
+    float: right;
+
+    .ps-link{
+      width: 100%;
+      height: 32px;
+      div{
+        width: 32px;
+        height: 32px;
+        background-color: @ps-dark-navy;
+        color: @ps-orange;
+        text-align:center;
+        line-height: 32px;
+        font-weight: bold;
+        border-radius: 32px;
+        float:left;
+      }
+      a {
+        float: left;
+        margin-left: @gap-size;
+        display: inline-block;
+        width: 80%;
+        text-decoration: none;
+      }
+    }
+  }
+}
+

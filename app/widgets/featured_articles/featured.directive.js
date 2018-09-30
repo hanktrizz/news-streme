@@ -27,9 +27,7 @@ angular.module('newsStreme')
                             //first handle LHS featured article
                             var divLHS = angular.element(document.querySelector('#divFeaturedLHS'));
                             if (divLHS && divLHS.text() === '') {
-                                var thehtml = miniArticleTemplateHtml(articles[0].title, articles[0].description, articles[0].urlToImage, true);
-                                console.log(thehtml);
-                                divLHS.html(thehtml);
+                                divLHS.html(miniArticleTemplateHtml(articles[0].title, articles[0].description, articles[0].urlToImage, true));
                             }
                             //next handle all other RHS featured article boxes --> 4 of them
                             var divOtherFeaturedGroups = angular.element(document.querySelectorAll('.divMiniFeaturedBox'));

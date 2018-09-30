@@ -249,10 +249,11 @@ header {
   height: 75px;
 }
 .footer {
-  position: fixed;
-  bottom: 0;
+  background: #2f3a42;
+  color: #e1e2e3;
   height: 38px;
   line-height: 38px;
+  margin-top: 2vh;
 }
 #footerWrap {
   margin: 0 auto;
@@ -267,12 +268,13 @@ header {
 }
 .footerLinks a {
   text-decoration: none;
+  color: #e1e2e3;
 }
 .footerLinks a::after {
   content: "•";
   margin: 0 8px;
   opacity: 0.6;
-  color: blue;
+  color: #e1e2e3;
 }
 .footerLinks a:last-child::after {
   content: "";
@@ -286,6 +288,9 @@ header {
 body {
   background: beige;
   font-family: 'Source Sans Pro', sans-serif;
+}
+em {
+  font-style: italic;
 }
 /***************************
   Functions & Mixins
@@ -328,7 +333,7 @@ body {
   position: relative;
   overflow: hidden;
   height: 300px;
-  height: 25vh;
+  height: 30vh;
   float: left;
 }
 .rhsMiniBox img {
@@ -346,7 +351,7 @@ body {
   position: relative;
   overflow: hidden;
   height: 300px;
-  height: 50vh;
+  height: 60vh;
 }
 .lhsLargeBox img {
   width: 100%;
@@ -374,10 +379,11 @@ body {
   width: 100%;
 }
 #divFeaturedArticlesWrapper {
-  width: 100%;
-  height: 50vh;
+  width: 91.66%;
+  height: 60vh;
   overflow: hidden;
   border: solid white 5px;
+  margin: 0 auto;
 }
 #divFeaturedArticlesWrapper #divFeaturedLHS {
   width: 50%;
@@ -423,19 +429,19 @@ body {
 /***************************
   world/aussie/VIC/all news
 ***************************/
-.categoryWrapper {
-  width: 91.66%;
-  overflow: hidden;
-  margin: 0 auto;
-}
-.categoryWrapper h1 {
+h1 {
   font-size: 14pt;
   margin: 2vh 2vh;
   font-weight: bold;
   text-align: right;
 }
-.categoryWrapper h1 span {
+h1 span {
   border-bottom: solid #f58220 3px;
+}
+.categoryWrapper {
+  width: 91.66%;
+  overflow: hidden;
+  margin: 0 auto;
 }
 .categoryWrapper .routeLHS {
   width: 70%;
@@ -556,4 +562,56 @@ body {
   float: left;
   max-width: 320px;
   margin-left: 1vh;
+}
+/***************************
+  Landing Page Style
+***************************/
+#divMidSection {
+  width: 91.66%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+#divMidSection #divCategoriesWrap {
+  width: 60%;
+  float: left;
+}
+#divMidSection #divCategoriesWrap .divCat {
+  width: 120px;
+  float: left;
+  margin-right: 2.5vh;
+}
+#divMidSection #divCategoriesWrap .divCat p {
+  background: white;
+  text-align: center;
+  padding: 2vh 0;
+}
+#divMidSection #divCategoriesWrap .divCat img {
+  width: 100%;
+  height: 100%;
+}
+#divMidSection #divMiscellaneousWrap {
+  width: 40%;
+  float: right;
+}
+#divMidSection #divMiscellaneousWrap .ps-link {
+  width: 100%;
+  height: 32px;
+}
+#divMidSection #divMiscellaneousWrap .ps-link div {
+  width: 32px;
+  height: 32px;
+  background-color: #2f3a42;
+  color: #f58220;
+  text-align: center;
+  line-height: 32px;
+  font-weight: bold;
+  border-radius: 32px;
+  float: left;
+}
+#divMidSection #divMiscellaneousWrap .ps-link a {
+  float: left;
+  margin-left: 1vh;
+  display: inline-block;
+  width: 80%;
+  text-decoration: none;
 }

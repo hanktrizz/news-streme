@@ -331,3 +331,6 @@ ASALocalRun/
 
 #ignoring config file that contains API Key
 config.js
+
+#ignoring less files as they bloat up css percentage
+*.less
