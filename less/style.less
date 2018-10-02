@@ -41,7 +41,7 @@
 }
 
 body {
-  background: @ps-whitesmoke;
+  background-color: lightgray;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -130,6 +130,18 @@ em {
     bottom: 0;
     background: rgba(255, 255, 255, 0.5);
     width: 100%;
+    min-height: 70px;
+
+    p:first-of-type{
+      font-size: 14pt;
+      font-weight: bold;
+      margin-bottom: @gap-size;
+    }
+
+    .pDesc{
+      font-size: 10pt;
+      min-height: 40px;
+    }
   }
 }
 
