@@ -27,12 +27,13 @@
     <header class="header col-12">
         <a href="#" class="header__logo"><img src="assets/images/NewsStreme_Logo.jpg" />NEWSSTREME</a>
 
-        <div class="menu col-6">
+        <input class="burger-check" id="burger-check" type="checkbox"><label for="burger-check" class="burger"></label>
+        <div class="navigation col-6">
             <nav>
-                <a href="#!/world">World</a>
-                <a href="#!/aussienews">Australian</a>
-                <a href="#!/victoria">Victoria</a>
-                <a href="#!/all">All News</a>
+                <li><a href="#!/world">World</a></li>
+                <li><a href="#!/aussienews">Australian</a></li>
+                <li><a href="#!/victoria">Victoria</a></li>
+                <li><a href="#!/all">All News</a></li>
             </nav>
         </div>
 
@@ -63,11 +64,18 @@
     </footer>
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel = "stylesheet" type="text/css" href = "/node_modules/angular-material/angular-material.min.css">
 
-    <!--app core scripts-->
+    <!--app framework scripts-->
     <script type='text/javascript' src='config.js'></script>
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/node_modules/angular-route/angular-route.js"></script>
+    <!--angularjs material ui modules (must be loaded in this order-->
+    <script src="/node_modules/angular-animate/angular-animate.js"></script>
+    <script src="/node_modules/angular-aria/angular-aria.js"></script>
+    <script src="/node_modules/angular-messages/angular-messages.js"></script>
+    <script src="/node_modules/angular-material/angular-material.js"></script>
+    <!--app core scripts-->
     <script src="app/app.js"></script>
     <script src="app/shared/constants.js"></script>
     <script src="app/shared/services/api.service.js"></script>
