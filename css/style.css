@@ -173,7 +173,7 @@ table {
   padding: 0;
   cursor: pointer;
   border-bottom: 4px solid currentColor;
-  width: 28px;
+  width: 32px;
   transition: border-bottom 1s ease-in-out;
   -webkit-transition: border-bottom 1s ease-in-out;
 }
@@ -212,6 +212,7 @@ table {
   -webkit-transform: rotate(-405deg) translateY(1px) translateX(-3px);
   transition: transform 0.5s ease-in-out;
   -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  margin-top: 5px;
 }
 .burger-check:checked ~ .burger:after {
   transform: rotate(405deg) translateY(-4px) translateX(-5px);
@@ -249,6 +250,16 @@ li a:hover {
 header {
   height: 75px;
   background: #fff;
+}
+#burger-wrapper {
+  position: relative;
+  width: 8.33%;
+  height: inherit;
+  background: teal;
+  text-align: center;
+}
+#burger-wrapper .burger {
+  margin-top: 25px;
 }
 /*same as header a*/
 .header__logo {
