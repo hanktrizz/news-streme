@@ -172,7 +172,7 @@ table {
   outline: 0;
   padding: 0;
   cursor: pointer;
-  border-bottom: 4px solid currentColor;
+  border-bottom: 4px solid white;
   width: 32px;
   transition: border-bottom 1s ease-in-out;
   -webkit-transition: border-bottom 1s ease-in-out;
@@ -184,7 +184,7 @@ table {
 .burger:before {
   content: "";
   display: block;
-  border-bottom: 4px solid currentColor;
+  border-bottom: 4px solid white;
   width: 100%;
   margin-bottom: 5px;
   transition: transform 0.5s ease-in-out;
@@ -193,7 +193,7 @@ table {
 .burger:after {
   content: "";
   display: block;
-  border-bottom: 4px solid currentColor;
+  border-bottom: 4px solid white;
   width: 100%;
   margin-bottom: 5px;
   transition: transform 0.5s ease-in-out;
@@ -251,69 +251,54 @@ header {
   height: 75px;
   background: #fff;
 }
+header #burger-wrapper,
+header #logo-wrapper,
+header #cog-wrapper {
+  height: inherit;
+  float: left;
+}
+#header-tagline {
+  text-align: center;
+  border-bottom: solid 1px #E8E8E8;
+}
+#header-tagline span {
+  display: inline-block;
+  padding: 10px 0;
+}
 #burger-wrapper {
   position: relative;
-  width: 8.33%;
-  height: inherit;
-  background: teal;
+  background: #0079c1;
   text-align: center;
+  border-bottom: solid 1px #E8E8E8;
 }
 #burger-wrapper .burger {
   margin-top: 25px;
 }
-/*same as header a*/
-.header__logo {
-  font: 0/0 a;
-  text-shadow: none;
-  color: transparent;
-  max-width: 350px;
-  display: block;
-  float: left;
-}
-.header__logo img {
-  max-width: 100%;
-  height: 75px;
-}
-/***************************
-  Navigation Style Rules
-***************************/
-.menu {
-  margin: 0 auto;
-}
-.menu nav {
-  height: 75px;
-}
-.menu nav a {
+#logo-wrapper {
   position: relative;
-  text-decoration: none;
-  display: inline-block;
-  height: 75px;
-  line-height: 75px;
-  width: 15%;
-  float: left;
-  text-align: center;
+  border-bottom: solid 1px #E8E8E8;
 }
-.menu nav a:hover {
-  color: #f58220;
-}
-/***************************
-  Header Icons Style Rules
-***************************/
-#txtSearchBar {
-  display: none;
-}
-#auxLinkIcons {
+#icons-wrapper {
   position: absolute;
   right: 0;
-  top: 0;
+  bottom: 0;
+  text-decoration: none;
 }
-#auxLinkIcons a:first-of-type {
+#icons-wrapper a {
+  text-shadow: none;
+  color: transparent;
+}
+#icons-wrapper #nav-search {
   background: url("../assets/icons/zoom_icon&32.png") no-repeat center center;
+  border-left: solid 1px #E8E8E8;
+  border-right: solid 1px #E8E8E8;
+  float: left;
 }
-#auxLinkIcons #icoSettings {
+#icons-wrapper #icoSettings {
   background: url("../assets/icons/cog_icon&32.png") no-repeat center center;
+  float: left;
 }
-#auxLinkIcons #icoSettings:hover {
+#icons-wrapper #icoSettings:hover {
   animation: spin 1s linear 1;
 }
 .icon {
@@ -321,6 +306,9 @@ header {
   width: 75px;
   height: 75px;
 }
+/***************************
+  Navigation Style Rules
+***************************/
 .footer {
   background: #2f3a42;
   color: #e1e2e3;
