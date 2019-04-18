@@ -1,3 +1,5 @@
+@import "vendor/hamburger.less";
+
 @link-hover-color: #F58220;
 
 @header-background-color: #fff;
@@ -5,6 +7,8 @@
 @header-logo-width: 350px;
 @header-logo-max-width: 100%;
 @header-logo-margin-left: 25px;
+@header-border-colour: #E8E8E8;
+@header-border-style: solid 1px @header-border-colour;
 
 /***************************
   Header Logo Style Rules
@@ -12,89 +16,59 @@
 header {
   height: @header-logo-height;
   background: @header-background-color;
-}
-
-/*same as header a*/
-.header__logo {
-  font: 0/0 a;
-  text-shadow: none;
-  color: transparent;
-  max-width: @header-logo-width;
-  display: block;
-  float: left;
-
-  img {
-    max-width: @header-logo-max-width;
-    height: @header-logo-height;
-    //margin-left: @header-logo-margin-left;
+  #burger-wrapper, #logo-wrapper, #cog-wrapper {
+    height: inherit;
+    float: left;
   }
 }
 
-/***************************
-  Navigation Style Rules
-***************************/
-.menu {
-  margin: 0 auto;
-
-  nav {
-    height: @header-logo-height;
-
-    //a:before {
-    //  content: "";
-    //  position: absolute;
-    //  width: 80%;
-    //  height: 2px;
-    //  bottom: 0;
-    //  left: 10%;
-    //  background-color: @link-hover-color;
-    //  visibility: hidden;
-    //  -webkit-transform: scaleX(0);
-    //  transform: scaleX(0);
-    //  -webkit-transition: all 0.3s ease-in-out 0s;
-    //  transition: all 0.3s ease-in-out 0s;
-    //}
-    //
-    a {
-      position: relative;
-      text-decoration: none;
-      display: inline-block;
-      height: @header-logo-height;
-      line-height: @header-logo-height;
-      width: 15%;
-      float: left;
-      text-align: center;
-      //&:hover:before {
-      //visibility: visible;
-      //-webkit-transform: scaleX(1);
-      //transform: scaleX(1);
-      //}
-      &:hover {
-        color: @ps-orange;
-      }
-    }
+#header-tagline {
+  text-align: center;
+  border-bottom: @header-border-style;
+  span {
+    display: inline-block;
+    padding: 10px 0;
   }
-
 }
 
-/***************************
-  Header Icons Style Rules
-***************************/
-#txtSearchBar {
-  .displayHidden();
+#burger-wrapper {
+  position: relative;
+  background: @ps-blue;
+  text-align: center;
+  border-bottom: solid 1px @header-border-colour;
+  .burger {
+    margin-top: 25px;
+  }
 }
 
-#auxLinkIcons {
+#logo-wrapper {
+  position: relative;
+  border-bottom: solid 1px @header-border-colour;
+}
+
+#icons-wrapper {
   position: absolute;
   right: 0;
-  top: 0;
-  a:first-of-type {
-    background: url("@{ico-path}/zoom_icon&32.png") no-repeat center center;
+  bottom: 0;
+  text-decoration: none;
+
+  a {
+    text-shadow: none;
+    color: transparent;
   }
 
+  #nav-search {
+    background: url("@{ico-path}/zoom_icon&32.png") no-repeat center center;
+    border-left: solid 1px @header-border-colour;
+    border-right: solid 1px @header-border-colour;
+    float: left;
+  }
   #icoSettings {
     background: url("@{ico-path}/cog_icon&32.png") no-repeat center center;
+    float: left;
     &:hover {
       .rotateOnHover();
+
     }
   }
 }
@@ -104,3 +78,49 @@ header {
   width: @header-logo-height;
   height: @header-logo-height;
 }
+
+/***************************
+  Navigation Style Rules
+***************************/
+//.menu {
+//  margin: 0 auto;
+//
+//  nav {
+//    height: @header-logo-height;
+//
+//    //a:before {
+//    //  content: "";
+//    //  position: absolute;
+//    //  width: 80%;
+//    //  height: 2px;
+//    //  bottom: 0;
+//    //  left: 10%;
+//    //  background-color: @link-hover-color;
+//    //  visibility: hidden;
+//    //  -webkit-transform: scaleX(0);
+//    //  transform: scaleX(0);
+//    //  -webkit-transition: all 0.3s ease-in-out 0s;
+//    //  transition: all 0.3s ease-in-out 0s;
+//    //}
+//    //
+//    a {
+//      position: relative;
+//      text-decoration: none;
+//      display: inline-block;
+//      height: @header-logo-height;
+//      line-height: @header-logo-height;
+//      width: 15%;
+//      float: left;
+//      text-align: center;
+//      //&:hover:before {
+//      //visibility: visible;
+//      //-webkit-transform: scaleX(1);
+//      //transform: scaleX(1);
+//      //}
+//      &:hover {
+//        color: @ps-orange;
+//      }
+//    }
+//  }
+
+//}

@@ -165,6 +165,85 @@ table {
 .col-12 {
   width: 100%;
 }
+.burger {
+  display: inline-block;
+  border: 0;
+  background: none;
+  outline: 0;
+  padding: 0;
+  cursor: pointer;
+  border-bottom: 4px solid white;
+  width: 32px;
+  transition: border-bottom 1s ease-in-out;
+  -webkit-transition: border-bottom 1s ease-in-out;
+}
+.burger::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.burger:before {
+  content: "";
+  display: block;
+  border-bottom: 4px solid white;
+  width: 100%;
+  margin-bottom: 5px;
+  transition: transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+.burger:after {
+  content: "";
+  display: block;
+  border-bottom: 4px solid white;
+  width: 100%;
+  margin-bottom: 5px;
+  transition: transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+.burger-check {
+  display: none;
+}
+.burger-check:checked ~ .burger {
+  border-bottom: 4px solid transparent;
+  transition: border-bottom 0.8s ease-in-out;
+  -webkit-transition: border-bottom 0.8s ease-in-out;
+}
+.burger-check:checked ~ .burger:before {
+  transform: rotate(-405deg) translateY(1px) translateX(-3px);
+  -webkit-transform: rotate(-405deg) translateY(1px) translateX(-3px);
+  transition: transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  margin-top: 5px;
+}
+.burger-check:checked ~ .burger:after {
+  transform: rotate(405deg) translateY(-4px) translateX(-5px);
+  -webkit-transform: rotate(405deg) translateY(-4px) translateX(-5px);
+  transition: transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+.navigation {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-in-out;
+}
+.burger-check:checked ~ .navigation {
+  max-height: 500px;
+  transition: max-height 0.5s ease-in-out;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+  font-size: 25px;
+  padding: 5px 0;
+}
+li a {
+  text-decoration: none;
+}
+li a:hover {
+  text-decoration: underline;
+}
 /***************************
   Header Logo Style Rules
 ***************************/
@@ -172,59 +251,54 @@ header {
   height: 75px;
   background: #fff;
 }
-/*same as header a*/
-.header__logo {
-  font: 0/0 a;
-  text-shadow: none;
-  color: transparent;
-  max-width: 350px;
-  display: block;
+header #burger-wrapper,
+header #logo-wrapper,
+header #cog-wrapper {
+  height: inherit;
   float: left;
 }
-.header__logo img {
-  max-width: 100%;
-  height: 75px;
-}
-/***************************
-  Navigation Style Rules
-***************************/
-.menu {
-  margin: 0 auto;
-}
-.menu nav {
-  height: 75px;
-}
-.menu nav a {
-  position: relative;
-  text-decoration: none;
-  display: inline-block;
-  height: 75px;
-  line-height: 75px;
-  width: 15%;
-  float: left;
+#header-tagline {
   text-align: center;
+  border-bottom: solid 1px #E8E8E8;
 }
-.menu nav a:hover {
-  color: #f58220;
+#header-tagline span {
+  display: inline-block;
+  padding: 10px 0;
 }
-/***************************
-  Header Icons Style Rules
-***************************/
-#txtSearchBar {
-  display: none;
+#burger-wrapper {
+  position: relative;
+  background: #0079c1;
+  text-align: center;
+  border-bottom: solid 1px #E8E8E8;
 }
-#auxLinkIcons {
+#burger-wrapper .burger {
+  margin-top: 25px;
+}
+#logo-wrapper {
+  position: relative;
+  border-bottom: solid 1px #E8E8E8;
+}
+#icons-wrapper {
   position: absolute;
   right: 0;
-  top: 0;
+  bottom: 0;
+  text-decoration: none;
 }
-#auxLinkIcons a:first-of-type {
+#icons-wrapper a {
+  text-shadow: none;
+  color: transparent;
+}
+#icons-wrapper #nav-search {
   background: url("../assets/icons/zoom_icon&32.png") no-repeat center center;
+  border-left: solid 1px #E8E8E8;
+  border-right: solid 1px #E8E8E8;
+  float: left;
 }
-#auxLinkIcons #icoSettings {
+#icons-wrapper #icoSettings {
   background: url("../assets/icons/cog_icon&32.png") no-repeat center center;
+  float: left;
 }
-#auxLinkIcons #icoSettings:hover {
+#icons-wrapper #icoSettings:hover {
   animation: spin 1s linear 1;
 }
 .icon {
@@ -232,6 +306,9 @@ header {
   width: 75px;
   height: 75px;
 }
+/***************************
+  Navigation Style Rules
+***************************/
 .footer {
   background: #2f3a42;
   color: #e1e2e3;
@@ -270,7 +347,7 @@ header {
   box-sizing: border-box;
 }
 body {
-  background-color: lightgray;
+  background-color: white;
   font-family: 'Source Sans Pro', sans-serif;
 }
 em {

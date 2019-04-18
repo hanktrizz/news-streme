@@ -15,16 +15,20 @@
   "homepage": "https://github.com/hanktrizz/news-streme#readme",
   "devDependencies": {
     "catw": "^1.0.1",
-    "jasmine": "^3.2.0",
-    "less": "^3.8.1",
-    "nodemon": "^1.18.3"
+    "jasmine": "^3.4.0",
+    "less": "^3.9.0",
+    "nodemon": "^1.18.11"
   },
   "dependencies": {
-    "angular": "^1.7.3",
-    "angular-route": "^1.7.3",
-    "express": "^4.16.3",
-    "less-watch-compiler": "^1.11.3",
-    "morgan": "^1.9.0"
+    "angular": "^1.7.8",
+    "angular-animate": "^1.7.8",
+    "angular-aria": "^1.7.8",
+    "angular-material": "^1.1.18",
+    "angular-messages": "^1.7.8",
+    "angular-route": "^1.7.8",
+    "express": "^4.16.4",
+    "less-watch-compiler": "^1.13.0",
+    "morgan": "^1.9.1"
   },
   "scripts": {
     "build-css": "lessc less/style.less > css/style.css",
