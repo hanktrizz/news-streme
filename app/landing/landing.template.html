@@ -38,3 +38,84 @@
 </div>
 
 -->
+<div id="header-tagline">
+    <span>Daily Bite-sized news to stay in the loop.</span>
+</div>
+
+<md-content class="md-margin" layout-xs="column" layout="row">
+    <div flex-xs flex-gt-xs="50" layout="column">
+        <!--feature article 1-->
+        <md-card>
+            <img ng-src="{{$ctrl.main_article.urlToImage}}" class="md-card-image" alt="Headline Image 1">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{$ctrl.main_article.title}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <p>
+                    {{$ctrl.main_article.description}}
+
+                </p>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button>Action 1</md-button>
+                <md-button>Action 2</md-button>
+            </md-card-actions>
+        </md-card>
+        <!--feature article 2-->
+        <md-card>
+            <img ng-src="{{$ctrl.main_article_2.urlToImage}}" class="md-card-image" alt="Headline Image 2">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{$ctrl.main_article_2.title}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <p>
+                    {{$ctrl.main_article_2.description}}
+
+                </p>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button>Action 1</md-button>
+                <md-button>Action 2</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+
+    <div flex-xs flex-gt-xs="50" layout-xs="column" layout="column">
+        <div flex-xs flex-gt-xs="50" layout-xs="column" layout="row">
+            <md-card flex-xs flex-gt-xs="50" md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch
+                ng-repeat="item in $ctrl.mini_articles|limitTo:2">
+                <img ng-src="{{item.urlToImage}}" class="md-card-image" alt="">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{item.title}}</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>
+                        {{item.description}}
+                    </p>
+                </md-card-content>
+            </md-card>
+        </div>
+        <div flex-xs flex-gt-xs="50" layout-xs="column" layout="row">
+            <md-card flex-xs flex-gt-xs="50" md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch
+                ng-repeat="item in $ctrl.mini_articles|limitTo:2:2">
+                <img ng-src="{{item.urlToImage}}" class="md-card-image" alt="">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{item.title}}</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>
+                        {{item.description}}
+                    </p>
+                </md-card-content>
+            </md-card>
+        </div>
+    </div>
+</md-content>
