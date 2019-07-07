@@ -334,3 +334,5 @@ config.js
 
 #ignoring less files as they bloat up css percentage
 *.less
+
+*.css
