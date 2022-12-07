@@ -27,7 +27,7 @@
     "angular-material": "^1.1.18",
     "angular-messages": "^1.7.8",
     "angular-route": "^1.7.8",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "less-watch-compiler": "^1.13.0",
     "morgan": "^1.9.1"
   },
